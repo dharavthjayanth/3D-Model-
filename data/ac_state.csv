@@ -1,0 +1,7 @@
+timestamp,floor,ac_id,room,current_temp,set_temp,status,mode,last_service,health
+2026-02-14 10:00:00,1,F1-AC1,Room-101,22.06,22,ON,Cooling,2026-01-05,Good
+2026-02-14 16:24:41,1,F1-AC2,Room-102,22.49,22,ON,Cooling,2026-01-02,Good
+2026-02-14 17:06:08,2,F2-AC1,Room-201,22.82,23,ON,Cooling,2025-12-29,Good
+2026-02-14 17:36:59,2,F2-AC2,Room-202,23.39,21.0,OFF,Cooling,2025-12-26,Good
+2026-02-14 17:01:26,3,F3-AC1,Room-301,23.79,21.0,OFF,Cooling,2025-12-22,Service Soon
+2026-02-14 10:00:00,3,F3-AC2,Room-302,24.09,23,ON,Cooling,2025-12-19,Warning

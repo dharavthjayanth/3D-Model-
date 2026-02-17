@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>3D Building • AC Dashboard</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <div id="app">
+    <div id="left">
+      <div id="topbar">
+        <div class="title">Corporate Building • AC Dashboard</div>
+        <div class="sub">CSV-simulated • refresh: 5s • hover/click units</div>
+      </div>
+
+      <div id="canvasWrap">
+        <canvas id="c"></canvas>
+        <div id="hint">Drag rotate • Scroll zoom • Hover tooltip • Click select</div>
+      </div>
+    </div>
+
+    <div id="right">
+      <div class="panel">
+        <div class="panelTitle">View Controls</div>
+
+        <div class="row2">
+          <div class="muted">Walls</div>
+          <label class="switch">
+            <input id="wallsToggle" type="checkbox" checked />
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <div class="muted" style="margin-top:10px;">Floor separation</div>
+        <input id="sep" type="range" min="0" max="3.0" step="0.05" value="0.0" style="width:100%;" />
+      </div>
+
+      <div class="panel">
+        <div class="panelTitle">Selected AC</div>
+        <div id="selectedEmpty" class="muted">Click an AC unit in the 3D view.</div>
+
+        <div id="selectedCard" class="card hidden">
+          <div class="row">
+            <div>
+              <div class="big" id="acName">—</div>
+              <div class="muted" id="acMeta">—</div>
+            </div>
+            <div class="pill" id="acStatus">—</div>
+          </div>
+
+          <div class="grid">
+            <div class="kv">
+              <div class="k">Current</div>
+              <div class="v"><span id="acCurrent">—</span>°C</div>
+            </div>
+            <div class="kv">
+              <div class="k">Set</div>
+              <div class="v"><span id="acSet">—</span>°C</div>
+            </div>
+            <div class="kv">
+              <div class="k">Mode</div>
+              <div class="v" id="acMode">—</div>
+            </div>
+            <div class="kv">
+              <div class="k">Health</div>
+              <div class="v" id="acHealth">—</div>
+            </div>
+          </div>
+
+          <div class="smallMuted" id="acService">—</div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panelTitle">Chatbot (Excel Simulator)</div>
+        <div id="chat" class="chat"></div>
+
+        <div class="chatInput">
+          <input id="msg" placeholder='e.g. "set F3-AC1 to 21"' />
+          <button id="send">Send</button>
+        </div>
+
+        <div class="help muted">
+          Commands:
+          <code>set F3-AC1 to 21</code>,
+          <code>turn off F1-AC2</code>,
+          <code>mode F2-AC1 cooling</code>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panelTitle">Live Units</div>
+        <div id="list" class="list"></div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="/main.js"></script>
+</body>
+</html>
